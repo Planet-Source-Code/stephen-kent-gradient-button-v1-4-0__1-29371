@@ -1,0 +1,94 @@
+<HTML>
+	<TITLE>Gradient Button History</TITLE>
+	<BODY>
+		<B>Revision History:  </B>(Alpha and Beta Release notes not in History)<BR><BR><DIR>
+			<LI><FONT SIZE=4><B>1.4.0:</B></FONT><DIR>
+				<LI><B>New</B><DIR>
+					<LI>Button will now show it's animation for every click even if clicked multiple times very fast.</LI>
+					<LI>Will now correctly throw all events for multiple fast clicks.</LI>
+					<LI>HSL Coding seperated out into its own class for re-useability.</LI>
+				</DIR>
+				<LI><B>Fixed</B><DIR>
+					<LI>Bug in ChangeValue sub procedure - No longer will it allow the option buttons to be set to false by clicking on them again.  (At least one option button must be true at any given time)(Bug Present since Release 1.2.0 [Introduction of Option Button Functionality])</LI>
+					<LI>Bug in DrawGradient function - In extremely elongated buttons using elliptical gradient the corners of the button would not get draw properly.  Changed routines to calculate safe ellipses so that entire button is drawn. (Bug Present since Release 1.3.0 [Introduction of Elliptical Gradients])</LI>
+				</DIR>
+				<LI><B>Improved</B><DIR>
+					<LI>Caption Wrapping - Now done completely through API.  Before I was using a function to wrap the caption.</LI>
+					<LI>Borders coloring and caption styles enhanced to use HSL Darkening and lightening for better looking buttons.</LI>
+					<LI>Made DrawGradient far more efficient for Elliptical and Rectangular Gradients.</LI>
+				</DIR></LI>
+			</DIR>
+			<LI><FONT SIZE=4><B>1.3.0:</B></FONT><DIR>
+				<LI><B>New</B><DIR>
+					<LI>Added Picture Alignment (Thanks Edwin Vermeer)</LI>
+					<LI>Added Elliptical and Box Gradients</LI>
+					<LI>Added Caption and Picture Alignment Cushions (Almost like margins)</LI>
+					<LI>Added BackGround/Control Autosizing (Picture Modes)</LI>
+					<LI>Added HSL Gradient Blending (Thanks Ulli &amp; Edwin Vermeer)</LI>
+					<LI>Added Gradient Repetitions (Thanks Edwin Vermeer)</LI>
+					<LI>Added Hover options which allow Full Hover Effects / Border Only Hover / All Hover Effects except Border</LI>
+					<LI>Added Mouse Pointer/Icon handling for Disabled, Down, and Hover states.</LI>
+				</DIR>
+				<LI><B>Fixed</B><DIR>
+					<LI>Bug in Enabled Property (Design Mode, Control would appear enabled even though control was disabled after a form with control on it was closed then re-opened, Bug was present since Release 1.0.0) (Thanks for reporting problem, Edwin Vermeer)</LI>
+					<LI>Bug in scaling that would cause the button to crash when placed on a parent that did not have ScaleMode available (PictureBox on an MDI form, etc...).  Now if Parent.ScaleMode is not available button will scale co-ordinates to Twips (Thanks for reporting problem, costamar)</LI>
+					<LI>Bug in ToolTips that would cause button to crash when used in environments without the extender object (Access VBA, etc...) (Thanks for reporting problem, Edwin Vermeer)</LI>
+				</DIR>
+				<LI><B>Improved</B><DIR>
+					<LI>Caption Alignment has been improved to allow for positioning in any of 9 different positions [Changed existing enumeration which will cause some problems when upgrading] (Left Top / Left Middle / Left Bottom / Center Top Center Middle / Center Bottom / Right Top / Right Middle / Right Bottom)</LI>
+					<LI>Enabled/Disabled coding to allow more control over the Disabled state of the control.  Now prevents event processing instead of disabling the user control.</LI>
+					<LI>ToolTips to allow using ToolTips in environments that don't support the Extender.</LI>
+				</DIR></LI>
+			</DIR>
+			<LI><FONT SIZE=4><B>1.2.1:</B></FONT><DIR>
+				<LI><B>Fixed</B>
+				<DIR>
+					<LI>ToolTips are finally fixed and working. (I thought this important enough for another release just for this one issue)</LI>
+				</DIR></LI>
+			</DIR>
+			<LI><FONT SIZE=4><B>1.2.0:</B></FONT><DIR>
+				<LI><B>New</B><DIR>
+					<LI>Added Picture and Graphical Picture modes</LI>
+					<LI>Added Bevel Appearance Type</LI>
+					<LI>Added Bevel Width and Intensity properties (for customizing the bevel border)</LI>
+					<LI>Added UseClassicBorders property (to allow switching between blending and classic borders)</LI>
+					<LI>Added Option Button Compatibility and changed the structure of the State Button compatibility some</LI>
+				</DIR>
+				<LI><B>Fixed</B><DIR>
+					<LI>Fixed a minor issue with the ValueChanged event (event would not fire if changed via code)</LI>
+					<LI>Rewrote description text for properties / events / methods to be completely accurate</LI>
+				</DIR>
+				<LI><B>Improved</B><DIR>
+					<LI>Borders have been revamped to allow blending with the gradient/picture on the button</LI>
+				</DIR></LI>
+			</DIR>
+			<LI><FONT SIZE=4><B>1.1.1:</B></FONT><DIR>
+				<LI><B>Fixed</B><DIR>
+					<LI>Bug that would not re-process the caption for display if the caption was changed in code at run time, unless a refresh was done. (Bug introduced in Release 1.1.0)</LI>
+				</DIR></LI>
+			</DIR>
+			<LI><FONT SIZE=4><B>1.1.0:</B></FONT><DIR>
+				<LI><B>New</B><DIR>
+					<LI>5 Caption Styles</LI>
+					<LI>State Button Capability (sort of like a checkbox)</LI>
+				</DIR>
+				<LI><B>Fixed</B><DIR>
+					<LI>Bug in caption wrapping that would lose a character if a single "word" was longer than the caption width.</LI>
+				</DIR>
+				<LI><B>Improved</B><DIR>
+					<LI>Slight speed increase from de-coupling the caption wrapping and drawing.</LI>
+				</DIR></LI>
+			</DIR></LI>
+			<LI><FONT SIZE=4><B>1.0.0: </B></FONT><B>Initial Release</B><DIR>
+				<LI><B>Features</B> (Over and beyond the standard command button)<DIR>
+					<LI>Hover Effects</LI>
+					<LI>Gradient Backgrounds</LI>
+					<LI>Multiple Font/Color Support</LI>
+					<LI>3 Border Styles</LI>
+					<LI>Alignable Captions (Left / Center / Right)</LI>
+					<LI>Mouse Enter/Exit Events</LI>
+				</DIR></LI>
+			</DIR></LI>
+		</DIR>
+	</BODY>
+</HTML>
